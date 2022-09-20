@@ -3,6 +3,7 @@ const port=8000;
 const app=express();
 const bodyParser=require('body-parser');
 const db=require('./config/mongoose');
+const passport=require('passport');
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.set('view engine','ejs');
