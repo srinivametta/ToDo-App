@@ -9,7 +9,15 @@ module.exports={
 
     add_post:function (req,res) {
         ToDoList.create(req.body);
-        res.redirect('/');
+        res.redirect('/ToDo');
+    },
+
+    Authentication:function (req,res) {
+        res.render('home');
+    },
+
+    add_user:function (req,res) {
+        res.redirect('/')  
     }
 
 }
