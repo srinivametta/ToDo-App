@@ -4,6 +4,8 @@ const app=express();
 const bodyParser=require('body-parser');
 const db=require('./config/mongoose');
 const passport=require('passport');
+const session=require('express-session');
+const passportLocal=require('./config/passport-local-strategy');
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.set('view engine','ejs');
