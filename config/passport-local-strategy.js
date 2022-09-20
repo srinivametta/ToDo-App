@@ -38,9 +38,19 @@ passport.deserializeUser(async function (id,done) {
     
     try{
         const user_info=await User.findById(id);
-        done(null,user);
+        done(null,user_info);
     }catch(error){
-        done(err);
+        done(error);
     }
     
 });
+
+passport.setAuthenticatedUser=function (req,res,next) {
+    if (req.isAuthenticated()) {
+        res.locals.user=req.user;
+    }
+    next();
+}
+
+passport.createSession=passport.authenticate('local',{failureRedirect:'/'});
+
