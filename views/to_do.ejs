@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+</head>
+<body>
+    <form action="/add-post" method="post">
+        <textarea name="ToDo" cols="30" rows="10" placeholder="What to Do"></textarea>
+        <input type="date" name="Deadline" placeholder="Deadline">
+
+        <label for="importance_list">How Important is it</label>
+        <select name="Importance" id="importance_list">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">low</option>
+        </select>
+        
+        <input type="submit">
+    </form>
+</body>
+</html>
