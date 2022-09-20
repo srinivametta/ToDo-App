@@ -11,6 +11,18 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.set('view engine','ejs');
 app.set('views','./views');
 
+app.use(session({
+    name:'bhimSocial',
+    secret:'blahblah',
+    saveUninitialized:false,
+    resave:false,
+    cookie:{
+        maxAge:(1000*60*100)
+    }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/',require('./routes/ToDo_routes'));
 
