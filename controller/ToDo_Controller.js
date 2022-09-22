@@ -4,7 +4,7 @@ const User=require('../model/User_Schema');
 module.exports={
 
     ToDo_webiste:async function (req,res) {
-        // console.log(req.user.id);
+        console.log(req.user.id);
         const post_info=await ToDoList.findOne({User:req.user.id}).populate('User');
         res.render('to_do',{body_post:post_info});
     },
