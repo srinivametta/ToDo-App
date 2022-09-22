@@ -14,5 +14,6 @@ routes.post('/add-user',passport.revokeAccessIfAuthenticated,ToDo_actions.add_us
 // Authorization required
 routes.get('/ToDo',passport.giveAccessIfAuthenticated,ToDo_actions.ToDo_webiste);
 routes.post('/add-post',passport.giveAccessIfAuthenticated,ToDo_actions.add_post);
+routes.post('/sign-out',passport.giveAccessIfAuthenticated,ToDo_actions.sign_out);
 routes.post('/sign-in',passport.createSession,ToDo_actions.createSession);
 module.exports=routes;

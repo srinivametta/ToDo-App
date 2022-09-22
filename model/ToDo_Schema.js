@@ -17,12 +17,14 @@ const ToDoSchema=new mongoose.Schema({
         required:true
     },
 
-    // User:{
-    //     type:mongoose.Schema.Types.ObjectId,
-    //     required:true,
-    //     ref:'User'
-    // }
+    User:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref:'User'
+    }
 
+},{
+    timestamps:true,
 });
 
 
