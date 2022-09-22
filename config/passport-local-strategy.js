@@ -52,5 +52,20 @@ passport.setAuthenticatedUser=function (req,res,next) {
     next();
 }
 
+passport.giveAccessIfAuthenticated=function (req,res,next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    
+    return res.redirect('/');
+}
+
+passport.revokeAccessIfAuthenticated=function (req,res,next) {
+    if (req.isAuthenticated()) {
+        return res.redirect('/ToDo');
+    }
+    
+    return next();
+}
 passport.createSession=passport.authenticate('local',{failureRedirect:'/'});
 

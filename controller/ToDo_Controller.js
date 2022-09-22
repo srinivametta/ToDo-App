@@ -4,15 +4,11 @@ const User=require('../model/User_Schema');
 module.exports={
 
     ToDo_webiste:function (req,res) {
-        if (req.isAuthenticated()) {
-            res.render('to_do');
-        }
-        else{
-            res.redirect('/');
-        }
+        res.render('to_do');
     },
 
     add_post:async function (req,res) {
+        console.log(req.body);
         try{
             await ToDoList.create(req.body);
         }catch(error){
@@ -22,13 +18,8 @@ module.exports={
         res.redirect('/ToDo');
     },
 
-    Authentication:function (req,res) {
-        if (req.isAuthenticated()) {
-            res.redirect('/ToDo');   
-        }
-        else{
-            res.render('home');
-        }
+    home:function (req,res) {
+        res.render('home');
     },
 
     add_user:async function (req,res) {

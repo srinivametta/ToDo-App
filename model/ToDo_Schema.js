@@ -15,7 +15,13 @@ const ToDoSchema=new mongoose.Schema({
     Importance:{
         type:String,
         required:true
-    }
+    },
+
+    // User:{
+    //     type:mongoose.Schema.Types.ObjectId,
+    //     required:true,
+    //     ref:'User'
+    // }
 
 });
 
