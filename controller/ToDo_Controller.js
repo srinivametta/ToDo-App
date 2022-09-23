@@ -54,8 +54,6 @@ module.exports={
     },
 
     delete_post:async function (req,res) {
-        console.log(req.body.id!==undefined)
-        console.log(typeof req.body.id==typeof "");
 
         if (req.body.id!==undefined) {
             if (typeof req.body.id==typeof "") {
