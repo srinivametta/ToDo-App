@@ -4,8 +4,8 @@ const User=require('../model/User_Schema');
 module.exports={
 
     ToDo_webiste:async function (req,res) {
-        console.log(req.user.id);
-        const post_info=await ToDoList.findOne({User:req.user.id}).populate('User');
+        // console.log(req.user.id);
+        const post_info=await ToDoList.find({User:req.user.id}).populate('User');
         res.render('to_do',{body_post:post_info});
     },
 
@@ -51,6 +51,25 @@ module.exports={
             }
         });
         res.redirect('/');
+    },
+
+    delete_post:async function (req,res) {
+        console.log(req.body.id!==undefined)
+        console.log(typeof req.body.id==typeof "");
+
+        if (req.body.id!==undefined) {
+            if (typeof req.body.id==typeof "") {
+                await ToDoList.findByIdAndDelete(req.body.id);
+            }
+
+            else{
+                for(let i=0;i<req.body.id.length;i++){
+                    await ToDoList.findByIdAndDelete(req.body.id[i]);
+                }
+            }
+
+        }
+        return res.redirect('/todo');
     }
 
 }

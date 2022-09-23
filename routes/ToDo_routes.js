@@ -16,4 +16,5 @@ routes.get('/ToDo',passport.giveAccessIfAuthenticated,ToDo_actions.ToDo_webiste)
 routes.post('/add-post',passport.giveAccessIfAuthenticated,ToDo_actions.add_post);
 routes.post('/sign-out',passport.giveAccessIfAuthenticated,ToDo_actions.sign_out);
 routes.post('/sign-in',passport.createSession,ToDo_actions.createSession);
+routes.post('/delete-post',passport.giveAccessIfAuthenticated,ToDo_actions.delete_post);
 module.exports=routes;

@@ -8,7 +8,7 @@
 </head>
 <body>
     <form action="/sign-out" method="post">
-        <input type="submit" value="Sign Out" style="margin-left: 1396px;">
+        <input type="submit" value="Sign Out" style="margin-left: 1096px;">
     </form>
 
 
@@ -26,6 +26,18 @@
         <input type="submit" value="Add task">
     </form>
     <br>
-    <%=body_post%>
+    <%body_post%>
+
+    <form action="/delete-post" method="post">
+        <input type="submit" value="delete-post">
+        <%for(let i=0;i< body_post.length;i++){%>
+            <div>
+                <input type="checkbox" name="id" value='<%=body_post[i]._id%>'>
+                <h1><%=body_post[i].ToDo%></h1>
+                <h6><%=body_post[i].Importance%></h6>
+                <h4><%=body_post[i].Deadline%></h4>
+            </div>
+        <%}%>
+    </form>
 </body>
 </html>

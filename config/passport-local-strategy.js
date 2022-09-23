@@ -69,4 +69,3 @@ passport.revokeAccessIfAuthenticated=function (req,res,next) {
 }
 
 passport.createSession=passport.authenticate('local',{failureRedirect:'/'});
-
