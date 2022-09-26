@@ -14,7 +14,8 @@ module.exports={
             var deadline_date=new Date(req.body.Deadline);
             var curr_date=new Date();
             req.body.User=req.user.id;
-            if (deadline_date.getFullYear>=curr_date.getFullYear||deadline_date.getMonth>=curr_date.getMonth||deadline_date.getDate>=curr_date.getDate) {
+            
+            if ((deadline_date.getFullYear>=curr_date.getFullYear||deadline_date.getDate>=curr_date.getDate)&&deadline_date.getMonth>=curr_date.getMonth) {
                 await ToDoList.create(req.body);
             }
             else{
